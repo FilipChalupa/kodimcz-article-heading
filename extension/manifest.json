@@ -1,0 +1,16 @@
+{
+	"manifest_version": 3,
+	"name": "Kodim.cz article heading",
+	"description": "Stores the article heading.",
+	"version": "1.0",
+	"action": {
+		"default_popup": "popup.html",
+		"default_icon": "off.png"
+	},
+	"content_scripts": [
+		{
+			"js": ["content.js"],
+			"matches": ["https://kodim.cz/*"]
+		}
+	]
+}
