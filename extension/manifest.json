@@ -3,9 +3,10 @@
 	"name": "Kodim.cz article heading",
 	"description": "Stores the article heading.",
 	"version": "1.0",
+	"permissions": ["storage"],
 	"action": {
 		"default_popup": "popup.html",
-		"default_icon": "off.png"
+		"default_icon": "icon.png"
 	},
 	"content_scripts": [
 		{
