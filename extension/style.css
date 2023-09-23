@@ -1,0 +1,19 @@
+.main {
+	display: grid;
+	row-gap: 0.5rem;
+	min-width: 14rem;
+	text-align: center;
+}
+
+h1 {
+	margin: 0;
+}
+
+#toggle {
+	display: block;
+	width: 100%;
+}
+
+.link {
+	text-align: right;
+}
