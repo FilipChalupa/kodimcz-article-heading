@@ -1,5 +1,7 @@
 let lastTitleElement = null
 
+const storageKey = 'kodim-heading'
+
 const loop = async () => {
 	const enabled = (await chrome.storage.local.get('enabled')).enabled
 	if (enabled) {
@@ -9,7 +11,7 @@ const loop = async () => {
 			lastTitleElement = titleElement
 			try {
 				await fetch(
-					`https://key-value-store.deno.dev/?key=kodim-heading&value=${encodeURIComponent(
+					`https://key-value-store.deno.dev/?key=${storageKey}&value=${encodeURIComponent(
 						title,
 					)}`,
 				)
