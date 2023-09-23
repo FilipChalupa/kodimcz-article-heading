@@ -1,6 +1,6 @@
-let lastTitleElement = null
+import { storeValueRemotely } from './remoteStore.js'
 
-const storageKey = 'kodim-heading'
+let lastTitleElement = null
 
 const loop = async () => {
 	const enabled = (await chrome.storage.local.get('enabled')).enabled
@@ -8,13 +8,9 @@ const loop = async () => {
 		const titleElement = document.querySelector('body main h2')
 		const title = titleElement?.textContent
 		if (titleElement !== lastTitleElement && title !== 'Řešení') {
-			lastTitleElement = titleElement
 			try {
-				await fetch(
-					`https://key-value-store.deno.dev/?key=${storageKey}&value=${encodeURIComponent(
-						title,
-					)}`,
-				)
+				await storeValueRemotely(title)
+				lastTitleElement = titleElement
 			} catch (error) {
 				console.error(error)
 			}

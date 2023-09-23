@@ -1,4 +1,6 @@
-const toggle = document.querySelector('button')
+import { remoteStoreWatchUrl } from './remoteStore.js'
+
+const toggle = document.querySelector('#toggle')
 
 let enabled = false
 
@@ -16,3 +18,6 @@ toggle.addEventListener('click', () => {
 	chrome.storage.local.set({ enabled: !enabled })
 	updateState()
 })
+
+const watch = document.querySelector(`#watch`)
+watch.href = remoteStoreWatchUrl
