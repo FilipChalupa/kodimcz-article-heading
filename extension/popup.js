@@ -7,6 +7,7 @@ let enabled = false
 const updateState = async () => {
 	enabled = (await chrome.storage.local.get('enabled')).enabled
 
+	chrome.action.setBadgeBackgroundColor({ color: '#ffe24a' })
 	chrome.action.setBadgeText({
 		text: enabled ? 'on' : '',
 	})
