@@ -1,4 +1,13 @@
-import { storeValueRemotely } from './remoteStore.js'
+// import { storeValueRemotely } from './remoteStore.js'
+// Modules not allowed workaround
+const storageKey = 'kodim-heading'
+const storeValueRemotely = async (newValue) => {
+	await fetch(
+		`https://key-value-store.deno.dev/?key=${storageKey}&value=${encodeURIComponent(
+			newValue,
+		)}`,
+	)
+}
 
 let lastTitleElement = null
 
